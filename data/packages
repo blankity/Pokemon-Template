@@ -1,0 +1,88 @@
+﻿mse version: 2.0.0
+package:
+	name: en.mse-locale
+	version: 2011-01-22
+	status: 34
+	file: A20110122T223744 locale
+	file: A20071228T201340 usgb.png
+package:
+	name: pokemon-delta.mse-style
+	version: 2015-11-10
+	status: 34
+	file: A20151113T160519 card-sample.png
+	file: A20151114T182943 style
+	file: A20151113T160352 wg1card.png
+package:
+	name: pokemon-new.mse-style
+	version: 2015-11-10
+	status: 34
+	file: A20131115T132929 a1card.png
+	file: A20131115T132945 a2card.png
+	file: A20131021T104832 abcard.png
+	file: A20151110T194736 c1card.png
+	file: A20151110T195217 c2card.png
+	file: A20151109T224626 card-sample.png
+	file: A20151109T224223 cbcard.png
+	file: A20151111T160916 cmcard.png
+	file: A20151111T160816 cxcard.png
+	file: A20151111T161151 d1card.png
+	file: A20151111T161203 d2card.png
+	file: A20151111T161119 dbcard.png
+	file: A20131115T132742 f1card.png
+	file: A20131115T132753 f2card.png
+	file: A20131019T183133 fbcard.png
+	file: A20131115T132541 g1card.png
+	file: A20131115T132557 g2card.png
+	file: A20131019T183009 gbcard.png
+	file: A20131021T125457 itemcard.png
+	file: A20131115T132433 l1card.png
+	file: A20131115T132421 l2card.png
+	file: A20131019T182914 lbcard.png
+	file: A20131115T132241 m1card.png
+	file: A20131115T132317 m2card.png
+	file: A20131115T132253 mbcard.png
+	file: A20131115T132115 p1card.png
+	file: A20131115T132334 p2card.png
+	file: A20131115T132130 pbcard.png
+	file: A20131115T132718 r1card.png
+	file: A20131115T132705 r2card.png
+	file: A20131019T183038 rbcard.png
+	file: A20151112T135740 specialenergy.png
+	file: A20131021T125647 stadiumcard.png
+	file: A20151114T201533 style
+	file: A20131021T125613 supportercard.png
+	file: A20131021T125425 toolcard.png
+	file: A20131115T131947 w1card.png
+	file: A20131115T132357 w2card.png
+	file: A20131021T131950 wbcard.png
+	file: A20131205T150601 xy_sr_trainer_item.png
+	file: A20131205T150601 xy_sr_trainer_stadium.png
+	file: A20131205T150601 xy_sr_trainer_supporter.png
+	file: A20131205T210022 y1card.png
+	file: A20131205T210036 y2card.png
+	file: A20131205T205942 ybcard.png
+package:
+	name: pokemon-symbols.mse-symbol-font
+	version: 2015-11-10
+	status: 34
+	file: A20151114T184526 ability.png
+	file: A20151111T144502 blank.png
+	file: A20151111T145938 colorless.png
+	file: A20151111T145638 dark.png
+	file: A20151111T150035 dragon.png
+	file: A20151111T145213 electric.png
+	file: A20151111T145310 fairy.png
+	file: A20151111T145457 fighting.png
+	file: A20151111T144648 fire.png
+	file: A20151111T145354 grass.png
+	file: A20151111T144902 metal.png
+	file: A20151111T144804 psychic.png
+	file: A20151114T200227 symbol-font
+	file: A20151111T150247 symbols.png
+	file: A20151111T144547 water.png
+package:
+	name: pokemon.mse-game
+	version: 2015-11-10
+	status: 34
+	file: A20151109T223331 card-back.png
+	file: A20151114T201510 game

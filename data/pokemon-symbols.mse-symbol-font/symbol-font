@@ -1,0 +1,55 @@
+mse version: 2.0.0
+installer group: pokemon/symbol-font
+short name: popup style
+version: 2015-11-10
+position hint: 002
+icon: ability.png
+
+image font size: 135
+horizontal space: 1
+
+symbol:
+	code: A
+	image: ability.png
+	regex: true
+symbol:
+	code: C
+	image: colorless.png
+	regex: true
+symbol:
+	code: W
+	image: water.png
+	regex: true
+symbol:
+	code: F
+	image: fighting.png
+	regex: true
+symbol:
+	code: D
+	image: dark.png
+	regex: true
+symbol:
+	code: R
+	image: fire.png
+	regex: true
+symbol:
+	code: Y
+	image: fairy.png
+	regex: true
+symbol:
+	code: G
+	image: grass.png
+	regex: true
+symbol:
+	code: L
+	image: lightning.png
+	regex: true
+symbol:
+	code: M
+	image: metal.png
+	regex: true
+symbol:
+	code: P
+	image: psychic.png
+	regex: true
+	

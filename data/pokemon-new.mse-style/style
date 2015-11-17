@@ -1,0 +1,353 @@
+mse version: 2.0.0
+game: pokemon
+short name: Modern Style
+full name: Current XY Sets
+icon: card-sample.png
+position hint: 02
+installer group: pokemon/style
+
+version: 2015-11-10
+
+depends on: pokemon.mse-game 2015-11-10
+depends on: pokemon-symbols.mse-symbol-font 2015-11-10
+
+card background: white
+card width: 375
+card height: 523
+card dpi: 150
+
+#Fonts Used: Gill Sans Std, Sanvito Pro Light Caption, Futura Std, Frutiger LT Std
+#################### Background Stuff
+card style:
+	
+	card_type:
+		top: 0
+		left: 0
+		height: 523
+		width: 375
+		z index: -2
+		render style: image
+		popup style: in place
+		choice images:
+			Pokemon Basic Colorless: cbcard.png
+			Pokemon Basic Grass: gbcard.png
+			Pokemon Basic Fire: rbcard.png
+			Pokemon Basic Water: wbcard.png
+			Pokemon Basic Electric: lbcard.png
+			Pokemon Basic Psychic: pbcard.png
+			Pokemon Basic Fighting: fbcard.png
+			Pokemon Basic Dark: dbcard.png
+			Pokemon Basic Metal: mbcard.png
+			Pokemon Basic Dragon: abcard.png
+			Pokemon Basic Fairy: ybcard.png
+
+			Pokemon Stage 1 Colorless: c1card.png
+			Pokemon Stage 1 Grass: g1card.png
+			Pokemon Stage 1 Fire: r1card.png
+			Pokemon Stage 1 Water: w1card.png
+			Pokemon Stage 1 Electric: l1card.png
+			Pokemon Stage 1 Psychic: p1card.png
+			Pokemon Stage 1 Fighting: f1card.png
+			Pokemon Stage 1 Dark: d1card.png
+			Pokemon Stage 1 Metal: m1card.png
+			Pokemon Stage 1 Dragon: a1card.png
+			Pokemon Stage 1 Fairy: y1card.png
+
+			Pokemon Stage 2 Colorless: c2card.png
+			Pokemon Stage 2 Grass: g2card.png
+			Pokemon Stage 2 Fire: r2card.png
+			Pokemon Stage 2 Water: w2card.png
+			Pokemon Stage 2 Electric: l2card.png
+			Pokemon Stage 2 Psychic: p2card.png
+			Pokemon Stage 2 Fighting: f2card.png
+			Pokemon Stage 2 Dark: d2card.png
+			Pokemon Stage 2 Metal: m2card.png
+			Pokemon Stage 2 Dragon: a2card.png
+			Pokemon Stage 2 Fairy: y2card.png
+
+			Trainer Item: itemcard.png
+			Trainer Tool: toolcard.png
+			Trainer Supporter: supportercard.png
+			Trainer Stadium: stadiumcard.png
+
+			Special Energy: specialenergy.png
+
+########## Name lists
+	name:
+		left: 88
+		top: 20
+		width: 150
+		height: 28
+		alignment: left shrink-overflow
+		padding bottom: 0
+		z index: 1
+		font:
+			name: Gill Sans Std
+			weight: bold
+			size: 18
+			color: rgb(0,0,0)
+	hp:
+		left: 282
+		top: 27
+		width: 45
+		height: 18
+		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		render style: image
+		popup style: dropdown
+		choice images:
+			HP30: 30.png
+			HP40: 40.png
+			HP50: 50.png
+			HP60: 60.png
+			HP70: 70.png
+			HP80: 80.png
+			HP90: 90.png
+			HP100: 100.png
+			HP110: 110.png
+			HP120: 120.png
+			HP130: 130.png
+			HP140: 140.png
+			HP150: 150.png
+			HP160: 160.png
+			HP170: 170.png
+			HP180: 180.png
+			HP190: 190.png
+			HP200: 200.png
+			HP210: 210.png
+			HP220: 220.png
+			HP230: 230.png
+			HP240: 240.png
+			HP250: 250.png
+
+	slot1cost:
+		left: 25
+		top: 275
+		width: 100
+		height: 45
+		alignment: middle left
+		z index: 2
+		font:
+			name: Futura Lt
+			size: 15
+		symbol font:
+			name: pokemon-symbols
+			size: 125
+			alignment: middle left
+		always symbol: true
+		padding top: 0
+		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+			
+	slot1name:
+		left: 123
+		top: 288
+		width: 135
+		height: 35
+		alignment: left
+		z index: 2
+		font:
+			name: Gill Sans MT Condensed
+			weight: bold
+			size: 17
+			color: {if card.slot1cost == "A" then rgb(194,54,0) else rgb(0,0,0) }
+			shadow displacement y: .5
+		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+
+	slot1damage:
+		left: 315
+		top: 288
+		width: 35
+		height: 35
+		alignment: right
+		z index: 2
+		font:
+			name: Futura Lt
+			weight: bold
+			size: 15
+			color: rgb(0,0,0)
+			shadow color: rgb(0,0,0)
+			shadow displacement x: -0.5
+		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+
+	slot1text:
+		left: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 55 else 30}
+		top: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 315 else 315}
+		width: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 267 else 315}
+		height: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 95 else 65}
+		alignment: left shrink-overflow
+		z index: 2
+		font:
+			name: Gill Sans
+			size: 10.5
+			color: rgb(0,0,0)
+
+	slot2cost:
+		left: 25
+		top: 375
+		width: 100
+		height: 35
+		alignment: middle left
+		z index: 2
+		font:
+			name: Futura Lt
+			size: 15
+			max stretch: 1.5
+		symbol font:
+			name: pokemon-symbols
+			size: 125
+			alignment: left shrink overflow
+		always symbol: true
+		padding top: 0
+		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+			
+	slot2name:
+		left: 123
+		top: 375
+		width: 135
+		height: 35
+		alignment: middle left
+		z index: 2
+		font:
+			name: Gill Sans MT Condensed
+			weight: bold
+			size: 17
+			color: rgb(0,0,0)
+			shadow displacement x: .5
+			shadow displacement y: .5
+		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+
+	slot2damage:
+		left: 315
+		top: 375
+		width: 35
+		height: 35
+		alignment: middle right
+		z index: 2
+		font:
+			name: Futura Lt
+			weight: bold
+			size: 15
+			color: rgb(0,0,0)
+			shadow color: rgb(0,0,0)
+			shadow displacement x: -0.5
+		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+
+	slot2text:
+		left: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 24 else 24}
+		top: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 405 else 405}
+		width: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 325 else 325}
+		height: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 35 else 35}
+		alignment: left shrink-overflow
+		z index: 2
+		font:
+			name: Gill Sans
+			size: 9
+			color: rgb(0,0,0)
+		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+
+	weakness:
+		left: 30
+		top: 455
+		width: 45
+		height: 20
+		alignment: left
+		z index: 2
+		font:
+			name: Gill Sans
+			size: 10
+			color: rgb(0,0,0)
+			weight: bold
+		symbol font:
+			name: pokemon-symbols
+			size: 85
+			alignment: middle
+		always symbol: true
+		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+
+	resistance:
+		left: 95
+		top: 455
+		width: 45
+		height: 20
+		alignment: left
+		z index: 2
+		font:
+			name: Gill Sans
+			size: 10
+			color: rgb(0,0,0)
+			weight: bold
+		symbol font:
+			name: pokemon-symbols
+			size: 85
+			alignment: middle
+		always symbol: true
+		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+	retreat:
+		left: 73
+		top: 475
+		width: 63
+		height: 18
+		z index: 2
+		render style: image
+		choice images:
+			No Retreat: noretreat.png
+			1 Retreat: retreat1.png
+			2 Retreat: retreat2.png
+			3 Retreat: retreat3.png
+			4 Retreat: retreat4.png
+		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		
+	flavor text:
+		left: 165
+		top: 442
+		width: 187
+		height: 45
+		z index: 2
+		alignment: shrink-overflow
+		mask: mask.png
+		visible:  {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		font:
+			name: Sanvito Pro Light Caption
+			size: 9.12
+			style: italic
+			color: rgb(0,0,0)
+
+########## Images
+	imageCard:
+		left: 34
+		top: 57
+		width: 307
+		height: 201
+		z index: -2
+
+	illustrator:
+		left: 205
+		top : 492
+		width: 100
+		height: 12
+		z index: 2
+		alignment: center left shrink-overflow
+		font:
+			name: Futura Std
+			style: italic
+			size: 7
+			color: rgb(0,0,0)
+	set number:
+		left: 305
+		top: 492
+		width: 20
+		height: 12
+		z index: 2
+		alignment: middle center
+		font:
+			name: Futura STD
+			style: italic
+			size: 7
+			color: rgb(0,0,0)
+
+
+	seticon:
+		left: 335
+		top: 485
+		width: 15
+		height: 15
+		z index: -2

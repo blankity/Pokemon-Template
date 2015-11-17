@@ -1,0 +1,293 @@
+mse version: 2.0.0
+short name: Pokemon
+full name: Pokemon Trading Card Game
+installer group: pokemon/game files
+icon: card-back.png
+position hint: 01
+
+version: 2015-11-10
+
+depends on: pokemon-new.mse-style           2015-11-10
+depends on: pokemon-symbols.mse-symbol-font 2015-11-10
+
+########### Script
+init script:
+	only_numbers := filter_rule(match: "[0-9]")
+
+########### Set Fields
+set field:
+	type: info
+	name: Set Information
+set field:
+	type: text
+	name: title
+	description: This information will not appear on the card
+set field:
+	type: text
+	name: description
+	multi line: true
+	description: This information will not appear on the card
+set field:
+	type: text
+	name: code
+	description: This is the code that will appear before the number of the card.
+set field:
+	type: text
+	name: illustrator
+	description: Illustrator Information.
+default set style:
+	title:
+		padding left: 2
+		font:
+			size: 16
+
+###################### Card Fields
+########### Background
+card field:
+	type: choice
+	name: card_type
+	description: The type of card
+	choice: Pokemon
+		choice: Basic
+			choice: Colorless
+			choice: Grass
+			choice: Fire
+			choice: Water
+			choice: Electric
+			choice: Psychic
+			choice: Fighting
+			choice: Dark
+			choice: Metal
+			choice: Dragon
+			choice: Fairy
+		choice: Stage 1
+			choice: Colorless
+			choice: Grass
+			choice: Fire
+			choice: Water
+			choice: Electric
+			choice: Psychic
+			choice: Fighting
+			choice: Dark
+			choice: Metal
+			choice: Dragon
+			choice: Fairy
+		choice: Stage 2
+			choice: Colorless
+			choice: Grass
+			choice: Fire
+			choice: Water
+			choice: Electric
+			choice: Psychic
+			choice: Fighting
+			choice: Dark
+			choice: Metal
+			choice: Dragon
+			choice: Fairy
+		choice: EX
+			choice: Colorless
+			choice: Grass
+			choice: Fire
+			choice: Water
+			choice: Electric
+			choice: Psychic
+			choice: Fighting
+			choice: Dark
+			choice: Metal
+			choice: Dragon
+			choice: Fairy
+		choice: Mega
+			choice: Colorless
+			choice: Grass
+			choice: Fire
+			choice: Water
+			choice: Electric
+			choice: Psychic
+			choice: Fighting
+			choice: Dark
+			choice: Metal
+			choice: Dragon
+			choice: Fairy
+		choice: BREAK
+			choice: Colorless
+			choice: Grass
+			choice: Fire
+			choice: Water
+			choice: Electric
+			choice: Psychic
+			choice: Fighting
+			choice: Dark
+			choice: Metal
+			choice: Dragon
+			choice: Fairy
+		choice: Full Art
+			choice: Colorless
+			choice: Grass
+			choice: Fire	
+			choice: Water
+			choice: Electric
+			choice: Psychic
+			choice: Fighting
+			choice: Dark
+			choice: Metal
+			choice: Dragon
+			choice: Fairy
+
+	choice: Trainer
+		choice: Item
+		choice: Tool
+		choice: Supporter
+		choice: Stadium
+		choice: ACE SPEC
+
+	choice: Special Energy
+	card list name: Card Type
+	card list visible: true
+	card list column: 2
+
+
+############## Name lists
+card field:
+	type: text
+	name: name
+	description: Name of Card
+	identifying: true
+	show statistics: false
+	card list name: Card Name
+	card list visible: true
+	card list column: 1
+
+card field:
+	type: choice
+	name: hp
+	description: HP
+	choice: HP30
+	choice: HP40
+	choice: HP50
+	choice: HP60
+	choice: HP70
+	choice: HP80
+	choice: HP90
+	choice: HP100
+	choice: HP110
+	choice: HP120
+	choice: HP130
+	choice: HP140
+	choice: HP150
+	choice: HP160
+	choice: HP170
+	choice: HP180
+	choice: HP190
+	choice: HP200
+	choice: HP210
+	choice: HP220
+	choice: HP230
+	choice: HP240
+	choice: HP250
+
+card field:
+	type: text
+	name: slot1cost
+	description: Cost/Ability
+	show statistics: false
+	
+card field:
+	type: text
+	name: slot1name
+	description: Slot 1 name
+	show statistics: false
+
+card field:
+	type: text
+	name: slot1damage
+	description: Slot 1 attack value
+	show statistics: false
+	script: only_numbers(value)
+
+card field:
+	type: text
+	name: slot1text
+	description: Effect
+	show statistics: false
+	multi line: true
+	
+card field:
+	type: text
+	name: slot2cost
+	description: Cost/Ability
+	show statistics: false
+	
+card field:
+	type: text
+	name: slot2name
+	description: Slot 2 name
+	show statistics: false
+
+card field:
+	type: text
+	name: slot2damage
+	description: Slot 2 attack value
+	show statistics: false
+
+card field:
+	type: text
+	name: slot2text
+	description: Effect
+	show statistics: false
+	
+
+card field:
+	type: text
+	name: weakness
+	description: Weakness
+	show statistics: false
+card field:
+	type: text
+	name: resistance
+	description: Resistance
+	show statistics: false
+
+card field:
+	type: choice
+	name: retreat
+	description: Retreat Cost
+	show statistics: false
+	choice: No Retreat
+	choice: 1 Retreat
+	choice: 2 Retreat
+	choice: 3 Retreat
+	choice: 4 Retreat
+	card list visible: true
+	card list column: 3
+	
+card field:
+	type: text
+	name: flavor text
+	description: Flavour Text
+	show statistics: false
+	multi line: true
+
+############## Image
+card field:
+	type: image
+	name: imageCard
+	show statistics: false
+
+############## Bottom Text
+
+card field:
+	type: text
+	name: illustrator
+	show statistics: false
+
+card field:
+	type: text
+	name: set number
+	description: Set Number
+	show statistics: false
+
+card field:
+	type: image
+	name: seticon
+	description: Set Icon
+	show statistics: false
