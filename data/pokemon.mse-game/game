@@ -5,10 +5,10 @@ installer group: pokemon/game files
 icon: card-back.png
 position hint: 01
 
-version: 2015-11-10
+version: 0.25
 
-depends on: pokemon-new.mse-style           2015-11-10
-depends on: pokemon-symbols.mse-symbol-font 2015-11-10
+depends on: pokemon-new.mse-style           0.25
+depends on: pokemon-symbols.mse-symbol-font 0.25
 
 ########### Script
 init script:
@@ -27,111 +27,103 @@ set field:
 	name: description
 	multi line: true
 	description: This information will not appear on the card
-set field:
-	type: text
-	name: code
-	description: This is the code that will appear before the number of the card.
-set field:
-	type: text
-	name: illustrator
-	description: Illustrator Information.
-default set style:
-	title:
-		padding left: 2
-		font:
-			size: 16
 
 ###################### Card Fields
 ########### Background
+### Basic, Stage 1, Stage 2, EX, Mega, BREAK, Full Art
 card field:
 	type: choice
 	name: card_type
 	description: The type of card
 	choice: Pokemon
-		choice: Basic
-			choice: Colorless
-			choice: Grass
-			choice: Fire
-			choice: Water
-			choice: Electric
-			choice: Psychic
-			choice: Fighting
-			choice: Dark
-			choice: Metal
-			choice: Dragon
-			choice: Fairy
-		choice: Stage 1
-			choice: Colorless
-			choice: Grass
-			choice: Fire
-			choice: Water
-			choice: Electric
-			choice: Psychic
-			choice: Fighting
-			choice: Dark
-			choice: Metal
-			choice: Dragon
-			choice: Fairy
-		choice: Stage 2
-			choice: Colorless
-			choice: Grass
-			choice: Fire
-			choice: Water
-			choice: Electric
-			choice: Psychic
-			choice: Fighting
-			choice: Dark
-			choice: Metal
-			choice: Dragon
-			choice: Fairy
-		choice: EX
-			choice: Colorless
-			choice: Grass
-			choice: Fire
-			choice: Water
-			choice: Electric
-			choice: Psychic
-			choice: Fighting
-			choice: Dark
-			choice: Metal
-			choice: Dragon
-			choice: Fairy
-		choice: Mega
-			choice: Colorless
-			choice: Grass
-			choice: Fire
-			choice: Water
-			choice: Electric
-			choice: Psychic
-			choice: Fighting
-			choice: Dark
-			choice: Metal
-			choice: Dragon
-			choice: Fairy
-		choice: BREAK
-			choice: Colorless
-			choice: Grass
-			choice: Fire
-			choice: Water
-			choice: Electric
-			choice: Psychic
-			choice: Fighting
-			choice: Dark
-			choice: Metal
-			choice: Dragon
-			choice: Fairy
-		choice: Full Art
-			choice: Colorless
-			choice: Grass
-			choice: Fire	
-			choice: Water
-			choice: Electric
-			choice: Psychic
-			choice: Fighting
-			choice: Dark
-			choice: Metal
-			choice: Dragon
-			choice: Fairy
+		choice: Grass
+			choice: Basic
+			choice: Stage 1
+			choice: Stage 2
+			choice: EX
+			choice: Mega
+			choice: BREAK
+			choice: Full Art
+		choice: Fire 
+			choice: Basic
+			choice: Stage 1
+			choice: Stage 2
+			choice: EX
+			choice: Mega
+			choice: BREAK
+			choice: Full Art
+		choice: Water
+			choice: Basic
+			choice: Stage 1
+			choice: Stage 2
+			choice: EX
+			choice: Mega
+			choice: BREAK
+			choice: Full Art
+		choice: Light
+			choice: Basic
+			choice: Stage 1
+			choice: Stage 2
+			choice: EX
+			choice: Mega
+			choice: BREAK
+			choice: Full Art
+		choice: Psych
+			choice: Basic
+			choice: Stage 1
+			choice: Stage 2
+			choice: EX
+			choice: Mega
+			choice: BREAK
+			choice: Full Art
+		choice: Fight
+			choice: Basic
+			choice: Stage 1
+			choice: Stage 2
+			choice: EX
+			choice: Mega
+			choice: BREAK
+			choice: Full Art
+		choice: Dark 
+			choice: Basic
+			choice: Stage 1
+			choice: Stage 2
+			choice: EX
+			choice: Mega
+			choice: BREAK
+			choice: Full Art
+		choice: Metal
+			choice: Basic
+			choice: Stage 1
+			choice: Stage 2
+			choice: EX
+			choice: Mega
+			choice: BREAK
+			choice: Full Art
+		choice: Fairy
+			choice: Basic
+			choice: Stage 1
+			choice: Stage 2
+			choice: EX
+			choice: Mega
+			choice: BREAK
+			choice: Full Art
+		choice: Dragn
+			choice: Basic
+			choice: Stage 1
+			choice: Stage 2
+			choice: EX
+			choice: Mega
+			choice: BREAK
+			choice: Full Art
+		choice: Color
+			choice: Basic
+			choice: Stage 1
+			choice: Stage 2
+			choice: EX
+			choice: Mega
+			choice: BREAK
+			choice: Full Art
 
 	choice: Trainer
 		choice: Item
@@ -144,6 +136,9 @@ card field:
 	card list name: Card Type
 	card list visible: true
 	card list column: 2
+	card list width: 100
+	card list allow: true
+	card list alignment: left
 
 
 ############## Name lists
@@ -234,6 +229,7 @@ card field:
 	name: slot2text
 	description: Effect
 	show statistics: false
+	multi line: true
 	
 
 card field:
@@ -291,3 +287,34 @@ card field:
 	name: seticon
 	description: Set Icon
 	show statistics: false
+card field:
+	type: image
+	name: evoimage
+	description: Image for Pre-evolution
+	show statistics: false
+
+card field:
+	type: text
+	name: evoname
+	description: Name of pre evolution
+	show statistics: false
+
+card field:
+	type: choice
+	name: atk1mod
+	description: Does this attack have a modifier?
+	show statistics: false
+	choice: 
+	choice: +
+	choice: x
+	choice: -
+
+card field:
+	type: choice
+	name: atk2mod
+	description: Does this attack have a modifier?
+	show statistics: false
+	choice: 
+	choice: +
+	choice: x
+	choice: -

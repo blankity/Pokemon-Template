@@ -6,10 +6,10 @@ icon: card-sample.png
 position hint: 02
 installer group: pokemon/style
 
-version: 2015-11-10
+version: 0.0.1
 
-depends on: pokemon.mse-game 2015-11-10
-depends on: pokemon-symbols.mse-symbol-font 2015-11-10
+depends on: pokemon.mse-game 0.25
+depends on: pokemon-symbols.mse-symbol-font 0.25
 
 card background: white
 card width: 375

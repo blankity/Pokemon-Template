@@ -6,18 +6,22 @@ icon: card-sample.png
 position hint: 02
 installer group: pokemon/style
 
-version: 2015-11-10
+version: 0.25
 
-depends on: pokemon.mse-game 2015-11-10
-depends on: pokemon-symbols.mse-symbol-font 2015-11-10
+depends on: pokemon.mse-game 		    0.25 
+depends on: pokemon-symbols.mse-symbol-font 0.25
 
 card background: white
 card width: 375
 card height: 523
-card dpi: 150
+card dpi: 96
 
 #Fonts Used: Gill Sans Std, Sanvito Pro Light Caption, Futura Std, Frutiger LT Std
 #################### Background Stuff
+
+init script:
+	hpImage := {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then "w" else ""}
+
 card style:
 	
 	card_type:
@@ -25,45 +29,100 @@ card style:
 		left: 0
 		height: 523
 		width: 375
-		z index: -2
+		z index: 1
 		render style: image
 		popup style: in place
 		choice images:
-			Pokemon Basic Colorless: cbcard.png
-			Pokemon Basic Grass: gbcard.png
-			Pokemon Basic Fire: rbcard.png
-			Pokemon Basic Water: wbcard.png
-			Pokemon Basic Electric: lbcard.png
-			Pokemon Basic Psychic: pbcard.png
-			Pokemon Basic Fighting: fbcard.png
-			Pokemon Basic Dark: dbcard.png
-			Pokemon Basic Metal: mbcard.png
-			Pokemon Basic Dragon: abcard.png
-			Pokemon Basic Fairy: ybcard.png
 
-			Pokemon Stage 1 Colorless: c1card.png
-			Pokemon Stage 1 Grass: g1card.png
-			Pokemon Stage 1 Fire: r1card.png
-			Pokemon Stage 1 Water: w1card.png
-			Pokemon Stage 1 Electric: l1card.png
-			Pokemon Stage 1 Psychic: p1card.png
-			Pokemon Stage 1 Fighting: f1card.png
-			Pokemon Stage 1 Dark: d1card.png
-			Pokemon Stage 1 Metal: m1card.png
-			Pokemon Stage 1 Dragon: a1card.png
-			Pokemon Stage 1 Fairy: y1card.png
+			Pokemon Grass Basic: gbcard.png
+			Pokemon Grass Stage 1: g1card.png
+			Pokemon Grass Stage 2: g2card.png
+			#Pokemon Grass EX: gXcard.png
+			#Pokemon Grass Mega: gMcard.png
+			#Pokemon Grass BREAK: gBREAKcard.png
+			#Pokemon Grass Full Art: cFAcard.png
 
-			Pokemon Stage 2 Colorless: c2card.png
-			Pokemon Stage 2 Grass: g2card.png
-			Pokemon Stage 2 Fire: r2card.png
-			Pokemon Stage 2 Water: w2card.png
-			Pokemon Stage 2 Electric: l2card.png
-			Pokemon Stage 2 Psychic: p2card.png
-			Pokemon Stage 2 Fighting: f2card.png
-			Pokemon Stage 2 Dark: d2card.png
-			Pokemon Stage 2 Metal: m2card.png
-			Pokemon Stage 2 Dragon: a2card.png
-			Pokemon Stage 2 Fairy: y2card.png
+			Pokemon Fire  Basic: rbcard.png
+			Pokemon Fire  Stage 1: r1card.png
+			Pokemon Fire  Stage 2: r2card.png
+			#Pokemon Fire  EX: rXcard.png
+			#Pokemon Fire  Mega: rMcard.png
+			#Pokemon Fire  BREAK: rBREAKcard.png
+			#Pokemon Fire  Full Art: rFAcard.png
+
+			Pokemon Water Basic: wbcard.png
+			Pokemon Water Stage 1: w1card.png
+			Pokemon Water Stage 2: w2card.png
+			#Pokemon Water EX: wXcard.png
+			#Pokemon Water Mega: wMcard.png
+			#Pokemon Water BREAK: wBREAKcard.png
+			#Pokemon Water Full Art: wFAcard.png
+
+			Pokemon Light Basic: lbcard.png
+			Pokemon Light Stage 1: l1card.png
+			Pokemon Light Stage 2: l2card.png
+			#Pokemon Light EX: lXcard.png
+			#Pokemon Light Mega: lMcard.png
+			#Pokemon Light BREAK: lBREAKcard.png
+			#Pokemon Light Full Art: lFAcard.png
+
+			Pokemon Psych Basic: pbcard.png
+			Pokemon Psych Stage 1: p1card.png
+			Pokemon Psych Stage 2: p2card.png
+			#Pokemon Psych EX: pXcard.png
+			#Pokemon Psych Mega: pMcard.png
+			#Pokemon Psych BREAK: pBREAKcard.png
+			#Pokemon Psych Full Art: pFAcard.png
+
+			Pokemon Fight Basic: fbcard.png
+			Pokemon Fight Stage 1: f1card.png
+			Pokemon Fight Stage 2: f2card.png
+			#Pokemon Fight EX: fXcard.png
+			#Pokemon Fight Mega: fMcard.png
+			#Pokemon Fight BREAK: fBREAKcard.png
+			#Pokemon Fight Full Art: fFAcard.png
+
+
+			Pokemon Dark  Basic: dbcard.png
+			Pokemon Dark  Stage 1: d1card.png
+			Pokemon Dark  Stage 2: d2card.png
+			#Pokemon Dark  EX: dXcard.png
+			#Pokemon Dark  Mega: dMcard.png
+			#Pokemon Dark  BREAK: dBREAKcard.png
+			#Pokemon Dark  Full Art: dFAcard.png
+
+			Pokemon Metal Basic: mbcard.png
+			Pokemon Metal Stage 1: m1card.png
+			Pokemon Metal Stage 2: m2card.png
+			#Pokemon Metal EX: mXcard.png
+			#Pokemon Metal Mega: mMcard.png
+			#Pokemon Metal BREAK: dBREAKcard.png
+			#Pokemon Metal Full Art: dFAcard.png
+
+			Pokemon Fairy Basic: ybcard.png
+			Pokemon Fairy Stage 1: y1card.png
+			Pokemon Fairy Stage 2: y2card.png
+			#Pokemon Fairy EX: yXcard.png
+			#Pokemon Fairy Mega: yMcard.png
+			#Pokemon Fairy BREAK: yBREAKcard.png
+			#Pokemon Fairy Full Art: yFAcard.png
+
+			Pokemon Dragn Basic: abcard.png
+			Pokemon Dragn Stage 1: a1card.png
+			Pokemon Dragn Stage 2: a2card.png
+			#Pokemon Dragn EX: aXcard.png
+			#Pokemon Dragn Mega: aMcard.png
+			#Pokemon Dragn BREAK: aBREAKcard.png
+			#Pokemon Dragn Full Art: aFAcard.png
+
+			Pokemon Color Basic: cbcard.png
+			Pokemon Color Stage 1: c1card.png
+			Pokemon Color Stage 2: c2card.png
+			#Pokmeon Colorless EX: cXcard.png
+			#Pokmeon Colorless Mega: cMcard.png
+			#Pokmeon Colorless BREAK: cBREAKcard.png
+			#Pokmeon Color Full Art: cFAcard.png
+
 
 			Trainer Item: itemcard.png
 			Trainer Tool: toolcard.png
@@ -71,57 +130,62 @@ card style:
 			Trainer Stadium: stadiumcard.png
 
 			Special Energy: specialenergy.png
+		
+		mask: {if substring(card.card_type, end: 7) == "Pokemon" and substring(card.card_type, begin: 14, end: 5) == "Stage" then "mask1.png" else "mask2.png"}
 
 ########## Name lists
 	name:
-		left: 88
-		top: 20
-		width: 150
+		left: {if substring(card.card_type, end: 7) == "Pokemon" then 88 else 43}
+		top: {if substring(card.card_type, end: 7) == "Pokemon" then 20 else 57}
+		width: {if substring(card.card_type, end: 7) == "Trainer" then 205 else 115}
 		height: 28
 		alignment: left shrink-overflow
 		padding bottom: 0
-		z index: 1
+		z index: 2
 		font:
-			name: Gill Sans Std
+			name: Myriad Pro Light
 			weight: bold
-			size: 18
-			color: rgb(0,0,0)
+			size: 17
+			max stretch: 0.5
+			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 	hp:
 		left: 282
 		top: 27
 		width: 45
 		height: 18
+		z index: 2
 		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
 		render style: image
 		popup style: dropdown
-		choice images:
-			HP30: 30.png
-			HP40: 40.png
-			HP50: 50.png
-			HP60: 60.png
-			HP70: 70.png
-			HP80: 80.png
-			HP90: 90.png
-			HP100: 100.png
-			HP110: 110.png
-			HP120: 120.png
-			HP130: 130.png
-			HP140: 140.png
-			HP150: 150.png
-			HP160: 160.png
-			HP170: 170.png
-			HP180: 180.png
-			HP190: 190.png
-			HP200: 200.png
-			HP210: 210.png
-			HP220: 220.png
-			HP230: 230.png
-			HP240: 240.png
-			HP250: 250.png
-
+		choice images: 
+			HP30: {hpImage()+30}.png
+			HP40: {hpImage()+40}.png
+			HP50: {hpImage()+50}.png
+			HP60: {hpImage()+60}.png
+			HP70: {hpImage()+70}.png
+			HP80: {hpImage()+80}.png
+			HP90: {hpImage()+90}.png
+			HP100: {hpImage()+100}.png
+			HP110: {hpImage()+110}.png
+			HP120: {hpImage()+120}.png
+			HP130: {hpImage()+130}.png
+			HP140: {hpImage()+140}.png
+			HP150: {hpImage()+150}.png
+			HP160: {hpImage()+160}.png
+			HP170: {hpImage()+170}.png
+			HP180: {hpImage()+180}.png
+			HP190: {hpImage()+190}.png
+			HP200: {hpImage()+200}.png
+			HP210: {hpImage()+210}.png
+			HP220: {hpImage()+220}.png
+			HP230: {hpImage()+230}.png
+			HP240: {hpImage()+240}.png
+			HP250: {hpImage()+250}.png
+		
 	slot1cost:
-		left: 25
-		top: 275
+		left: 24
+		top: {if card.slot1cost == "A!" then 272 else 375}
+		###{if card.card_type == "Pokemon Metal Stage 1" then 308 else 272}
 		width: 100
 		height: 45
 		alignment: middle left
@@ -129,6 +193,7 @@ card style:
 		font:
 			name: Futura Lt
 			size: 15
+			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 		symbol font:
 			name: pokemon-symbols
 			size: 125
@@ -139,22 +204,24 @@ card style:
 			
 	slot1name:
 		left: 123
-		top: 288
-		width: 135
+		top: {if card.slot1cost == "A!" then 284 else 375}
+		###{if card.card_type == "Pokemon Metal Stage 1" then 315 else 284}
+		width: {length(card.slot1name + card.slot1name + card.slot1name + card.slot1name + card.slot1name + 12) + 30}
 		height: 35
-		alignment: left
+		alignment: left shrink-overflow
 		z index: 2
 		font:
-			name: Gill Sans MT Condensed
-			weight: bold
-			size: 17
-			color: {if card.slot1cost == "A" then rgb(194,54,0) else rgb(0,0,0) }
+			name: Gill Sans MT Std Medium
+			size: 16
+			max stretch: 2.0
+			color: {if card.slot1cost == "A!" then rgb(229,2,35) else if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0) }
 			shadow displacement y: .5
 		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
 
 	slot1damage:
-		left: 315
-		top: 288
+		left: 309
+		top: {if card.slot1cost == "A!" then 284 else 375}
+		###{if card.card_type == "Pokemon Metal Stage 1" then 315 else 284}
 		width: 35
 		height: 35
 		alignment: right
@@ -163,26 +230,49 @@ card style:
 			name: Futura Lt
 			weight: bold
 			size: 15
-			color: rgb(0,0,0)
+			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 			shadow color: rgb(0,0,0)
 			shadow displacement x: -0.5
 		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		
+	atk1mod:
+		left: 343
+		top: 290
+		width: 15
+		height: 15
+		render style: text
+		alignment: center	
+		font:
+			name: Futura LT
+			weight: bold
+			size: 9.5
+			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
+		z index: 2
+		visible: {if card.atk1mod == "1" then false else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
 
+		
 	slot1text:
-		left: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 55 else 30}
-		top: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 315 else 315}
+		left: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 55 else 29}
+		top: {if card.slot1cost == "A!" then 312 else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 315 else if card.card_type == "Pokemon Metal Stage 1" then 345 else 405}
 		width: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 267 else 315}
 		height: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 95 else 65}
-		alignment: left shrink-overflow
+		alignment: middle left justify
 		z index: 2
 		font:
-			name: Gill Sans
-			size: 10.5
-			color: rgb(0,0,0)
+			name: Trebuchet MS
+			size: 10
+			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
+		symbol font:
+			name: pokemon-symbols
+			size: 108
+			alignment: center top justify-all
+		always symbol: true
+		allow formating: true
 
 	slot2cost:
-		left: 25
-		top: 375
+		left: {if card.slot1cost == "" then 0 else 25}
+		top: {if card.slot1cost == "" then 0 else 375}
+		###{if card.card_type == "Pokemon Metal Stage 1" then 355 else 375}
 		width: 100
 		height: 35
 		alignment: middle left
@@ -191,93 +281,117 @@ card style:
 			name: Futura Lt
 			size: 15
 			max stretch: 1.5
+			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 		symbol font:
 			name: pokemon-symbols
 			size: 125
-			alignment: left shrink overflow
+			alignment: left
 		always symbol: true
 		padding top: 0
-		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		visible: {if card.slot1cost == "" or card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
 			
 	slot2name:
-		left: 123
-		top: 375
-		width: 135
+		left: {if card.slot1name == "" then 0 else 123}
+		top: {if card.slot1name == "" then 0 else if card.card_type == "Pokemon Metal Stage 1" then 355 else 375}
+		width: {length(card.slot1name + card.slot1name + card.slot1name + card.slot1name + card.slot1name + 12) + 30}
 		height: 35
-		alignment: middle left
+		alignment: middle left shrink-overflow
 		z index: 2
 		font:
-			name: Gill Sans MT Condensed
-			weight: bold
-			size: 17
-			color: rgb(0,0,0)
+			name: Gill Sans MT Std Medium
+			size: 16
+			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 			shadow displacement x: .5
 			shadow displacement y: .5
-		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		visible: {if card.slot1name == "" then false else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
 
 	slot2damage:
-		left: 315
-		top: 375
+		left: {if card.slot1damage == "" and card.slot1cost != "A!" then 0 else 309}
+		top: {if card.slot1damage == "" and card.slot1cost != "A!" then 0 else 375}
+		###{if card.card_type == "Pokemon Metal Stage 1" then 355 else 375}
 		width: 35
 		height: 35
 		alignment: middle right
+		direction: right to left
 		z index: 2
 		font:
 			name: Futura Lt
-			weight: bold
-			size: 15
-			color: rgb(0,0,0)
+			size: 13
+			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 			shadow color: rgb(0,0,0)
 			shadow displacement x: -0.5
-		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		visible: {if card.slot1damage == "" and card.slot1cost != "A!" then false else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		allow formating: true
+	
+	atk2mod:
+		left: 343
+		top: 383
+		width: 15
+		height: 15
+		render style: text
+		alignment: center	
+		font:
+			name: Futura LT
+			weight: bold
+			size: 9.5
+			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
+		z index: 2
+		visible: {if card.slot2damage == false then false else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
 
 	slot2text:
-		left: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 24 else 24}
-		top: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 405 else 405}
-		width: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 325 else 325}
+		left: {if card.slot1text == "" then 0 else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 24 else 29}
+		top: {if card.slot1text == "" then 0 else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 405 else if card.card_type == "Pokemon Metal Stage 1" then 385 else 405}
+		width: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 325 else 315}
 		height: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 35 else 35}
-		alignment: left shrink-overflow
+		alignment: left justify
 		z index: 2
 		font:
-			name: Gill Sans
-			size: 9
-			color: rgb(0,0,0)
-		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+			name: Trebuchet MS
+			size: 10
+			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
+		visible: {if card.slot1text == "" then false else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		symbol font:
+			name: pokemon-symbols
+			size: 130
+			alignment: middle
+		always symbol: true
+
+####### Bottom of Card #######
 
 	weakness:
 		left: 30
-		top: 455
+		top: 453
 		width: 45
 		height: 20
 		alignment: left
 		z index: 2
 		font:
 			name: Gill Sans
-			size: 10
-			color: rgb(0,0,0)
+			size: 11
+			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 			weight: bold
 		symbol font:
 			name: pokemon-symbols
-			size: 85
+			size: 100
 			alignment: middle
 		always symbol: true
 		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
 
 	resistance:
 		left: 95
-		top: 455
+		top: 453
 		width: 45
 		height: 20
 		alignment: left
 		z index: 2
 		font:
 			name: Gill Sans
-			size: 10
-			color: rgb(0,0,0)
+			size: 11
+			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 			weight: bold
 		symbol font:
 			name: pokemon-symbols
-			size: 85
+			size: 100
 			alignment: middle
 		always symbol: true
 		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
@@ -307,16 +421,16 @@ card style:
 		visible:  {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
 		font:
 			name: Sanvito Pro Light Caption
-			size: 9.12
+			size: 8.12
 			style: italic
-			color: rgb(0,0,0)
+			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 
 ########## Images
 	imageCard:
-		left: 34
-		top: 57
-		width: 307
-		height: 201
+		left: {if substring(card.card_type, end: 7) == "Trainer" then 40 else 34}
+		top: {if substring(card.card_type, end: 7) == "Trainer" then 86 else 57}
+		width: {if substring(card.card_type, end: 7) == "Pokemon" then 306 else if substring(card.card_type, end: 7) == "Trainer" then 295 else 300}
+		height: {if substring(card.card_type, end: 7) == "Trainer" then 181 else 201}
 		z index: -2
 
 	illustrator:
@@ -329,8 +443,8 @@ card style:
 		font:
 			name: Futura Std
 			style: italic
-			size: 7
-			color: rgb(0,0,0)
+			size: 6.5
+			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 	set number:
 		left: 305
 		top: 492
@@ -342,12 +456,33 @@ card style:
 			name: Futura STD
 			style: italic
 			size: 7
-			color: rgb(0,0,0)
+			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 
 
 	seticon:
 		left: 335
 		top: 485
-		width: 15
+		width: 20
+		height: 20
+		z index: 2
+
+	evoimage:
+		left: 13
+		top: 34
+		width: 55
+		height: 55
+		z index: 5
+		visible: {if substring(card.card_type, end:7) == "Pokemon" and substring(card.card_type, begin: 14, end: 19) == "Stage" then true else false}
+
+	evoname:
+		left: 73
+		top: 53
+		width: 85
 		height: 15
-		z index: -2
+		z index: 3
+		visible: {if substring(card.card_type, end:7) == "Pokemon" and substring(card.card_type, begin: 14, end: 19) == "Stage" then true else false}
+		font:
+			name: Gill Sans
+			size: 6
+			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
+			style: italic
