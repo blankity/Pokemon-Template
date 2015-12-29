@@ -3,159 +3,86 @@ package:
 	name: en.mse-locale
 	version: 2011-01-22
 	status: 34
-package:
-	name: pokemon-custom.mse-style
-	version: 0.25.0
-	status: 34
-	file: A20151216T095429 card-sample.png
-	file: A20151216T094707 itemcard.png
-	file: A20151205T112306 mask2.png
-	file: A20151216T094702 stadiumcard.png
-	file: A20151216T103604 style
-	file: A20151216T094656 supportercard.png
+	file: A20110122T223744 locale
+	file: A20071228T201340 usgb.png
 package:
 	name: pokemon-delta.mse-style
-	version: 0.0.1
+	version: 2015-11-10
 	status: 34
-	file: M20151113T160519 card-sample.png
-	file: M20151129T231526 style
+	file: A20151113T160519 card-sample.png
+	file: A20151114T182943 style
+	file: A20151113T160352 wg1card.png
 package:
 	name: pokemon-new.mse-style
-	version: 0.25.0
+	version: 2015-11-10
 	status: 34
-	file: A20151116T214843 100.png
-	file: A20151116T214818 110.png
-	file: A20151116T214749 120.png
-	file: A20151116T214713 130.png
-	file: A20151116T214621 140.png
-	file: A20151116T214545 150.png
-	file: A20151116T214518 160.png
-	file: A20151116T214437 170.png
-	file: A20151116T214330 180.png
-	file: A20151116T214240 190.png
-	file: A20151116T215746 200.png
-	file: A20151116T220010 210.png
-	file: A20151116T220225 220.png
-	file: A20151116T220503 230.png
-	file: A20151116T220835 240.png
-	file: A20151116T220950 250.png
-	file: A20151116T215339 30.png
-	file: A20151116T215258 40.png
-	file: A20151116T215233 50.png
-	file: A20151116T215129 60.png
-	file: A20151116T215044 70.png
-	file: A20151116T214952 80.png
-	file: A20151116T214913 90.png
-	file: M20131115T132929 a1card.png
-	file: M20131115T132945 a2card.png
-	file: M20131021T104832 abcard.png
-	file: M20151110T194736 c1card.png
-	file: M20151110T195217 c2card.png
-	file: M20151109T224626 card-sample.png
-	file: M20151109T224223 cbcard.png
-	file: A20151121T161623 cbreakcard.png
-	file: M20151111T160916 cmcard.png
-	file: M20151111T160816 cxcard.png
-	file: M20151111T161151 d1card.png
-	file: M20151111T161203 d2card.png
-	file: M20151111T161119 dbcard.png
-	file: M20131115T132742 f1card.png
-	file: M20131115T132753 f2card.png
-	file: M20131019T183133 fbcard.png
-	file: M20131115T132541 g1card.png
-	file: M20131115T132557 g2card.png
-	file: M20131019T183009 gbcard.png
-	file: M20151215T104054 itemcard.png
-	file: M20131115T132433 l1card.png
-	file: M20131115T132421 l2card.png
-	file: M20131019T182914 lbcard.png
-	file: M20131115T132241 m1card.png
-	file: M20131115T132317 m2card.png
-	file: A20151116T213545 mask.png
-	file: A20151201T214211 mask1.png
-	file: A20151205T112306 mask2.png
-	file: M20131115T132253 mbcard.png
-	file: A20151116T163049 noretreat.png
-	file: M20131115T132115 p1card.png
-	file: M20131115T132334 p2card.png
-	file: M20131115T132130 pbcard.png
-	file: M20131115T132718 r1card.png
-	file: M20131115T132705 r2card.png
-	file: M20131019T183038 rbcard.png
-	file: A20151115T171558 retreat1.png
-	file: A20151115T171531 retreat2.png
-	file: A20151115T171328 retreat3.png
-	file: A20151115T155025 retreat4.png
-	file: M20151112T135740 specialenergy.png
-	file: M20131021T125647 stadiumcard.png
-	file: M20151215T104023 style
-	file: M20131021T125613 supportercard.png
-	file: M20131021T125425 toolcard.png
-	file: A20151209T093808 w100.png
-	file: A20151202T093007 w110.png
-	file: A20151209T094017 w120.png
-	file: A20151209T162606 w130.png
-	file: A20151209T094301 w140.png
-	file: A20151209T094231 w150.png
-	file: A20151209T094329 w160.png
-	file: A20151209T094645 w170.png
-	file: A20151209T094611 w180.png
-	file: A20151209T094546 w190.png
-	file: M20131115T131947 w1card.png
-	file: A20151209T094518 w200.png
-	file: A20151209T094451 w210.png
-	file: A20151209T094431 w220.png
-	file: A20151209T094725 w230.png
-	file: A20151209T094837 w240.png
-	file: A20151209T094815 w250.png
-	file: M20131115T132357 w2card.png
-	file: A20151209T090359 w30.png
-	file: A20151209T090438 w40.png
-	file: A20151209T090537 w50.png
-	file: A20151209T090623 w60.png
-	file: A20151209T090711 w70.png
-	file: A20151209T090755 w80.png
-	file: A20151209T090825 w90.png
-	file: M20131021T131950 wbcard.png
-	file: M20131205T150601 xy_sr_trainer_item.png
-	file: M20131205T150601 xy_sr_trainer_stadium.png
-	file: M20131205T150601 xy_sr_trainer_supporter.png
-	file: M20131205T210022 y1card.png
-	file: M20131205T210036 y2card.png
-	file: M20131205T205942 ybcard.png
+	file: A20131115T132929 a1card.png
+	file: A20131115T132945 a2card.png
+	file: A20131021T104832 abcard.png
+	file: A20151110T194736 c1card.png
+	file: A20151110T195217 c2card.png
+	file: A20151109T224626 card-sample.png
+	file: A20151109T224223 cbcard.png
+	file: A20151111T160916 cmcard.png
+	file: A20151111T160816 cxcard.png
+	file: A20151111T161151 d1card.png
+	file: A20151111T161203 d2card.png
+	file: A20151111T161119 dbcard.png
+	file: A20131115T132742 f1card.png
+	file: A20131115T132753 f2card.png
+	file: A20131019T183133 fbcard.png
+	file: A20131115T132541 g1card.png
+	file: A20131115T132557 g2card.png
+	file: A20131019T183009 gbcard.png
+	file: A20131021T125457 itemcard.png
+	file: A20131115T132433 l1card.png
+	file: A20131115T132421 l2card.png
+	file: A20131019T182914 lbcard.png
+	file: A20131115T132241 m1card.png
+	file: A20131115T132317 m2card.png
+	file: A20131115T132253 mbcard.png
+	file: A20131115T132115 p1card.png
+	file: A20131115T132334 p2card.png
+	file: A20131115T132130 pbcard.png
+	file: A20131115T132718 r1card.png
+	file: A20131115T132705 r2card.png
+	file: A20131019T183038 rbcard.png
+	file: A20151112T135740 specialenergy.png
+	file: A20131021T125647 stadiumcard.png
+	file: A20151114T201533 style
+	file: A20131021T125613 supportercard.png
+	file: A20131021T125425 toolcard.png
+	file: A20131115T131947 w1card.png
+	file: A20131115T132357 w2card.png
+	file: A20131021T131950 wbcard.png
+	file: A20131205T150601 xy_sr_trainer_item.png
+	file: A20131205T150601 xy_sr_trainer_stadium.png
+	file: A20131205T150601 xy_sr_trainer_supporter.png
+	file: A20131205T210022 y1card.png
+	file: A20131205T210036 y2card.png
+	file: A20131205T205942 ybcard.png
 package:
 	name: pokemon-symbols.mse-symbol-font
-	version: 0.25.0
+	version: 2015-11-10
 	status: 34
-	file: A20151201T101455 a.png
-	file: M20151114T213322 ability.png
-	file: M20151111T144502 blank.png
-	file: A20151201T101555 c.png
-	file: M20151115T153551 colorless.png
-	file: A20151201T101647 d.png
-	file: M20151115T153631 dark.png
-	file: A20151201T101723 f.png
-	file: M20151115T153753 fairy.png
-	file: M20151115T153503 fighting.png
-	file: M20151115T153019 fire.png
-	file: A20151201T101803 g.png
-	file: M20151115T151610 grass.png
-	file: A20151201T122336 l.png
-	file: A20151115T153316 lightning.png
-	file: A20151201T101932 m.png
-	file: M20151115T153721 metal.png
-	file: A20151201T102038 p.png
-	file: M20151115T153358 psychic.png
-	file: A20151201T102057 r.png
-	file: M20151210T125931 symbol-font
-	file: A20151210T125721 symbol-font-bak.txt
-	file: M20151201T101540 symbols.png
-	file: A20151201T102129 w.png
-	file: M20151115T153231 water.png
-	file: A20151201T101836 y.png
+	file: A20151114T184526 ability.png
+	file: A20151111T144502 blank.png
+	file: A20151111T145938 colorless.png
+	file: A20151111T145638 dark.png
+	file: A20151111T150035 dragon.png
+	file: A20151111T145213 electric.png
+	file: A20151111T145310 fairy.png
+	file: A20151111T145457 fighting.png
+	file: A20151111T144648 fire.png
+	file: A20151111T145354 grass.png
+	file: A20151111T144902 metal.png
+	file: A20151111T144804 psychic.png
+	file: A20151114T200227 symbol-font
+	file: A20151111T150247 symbols.png
+	file: A20151111T144547 water.png
 package:
 	name: pokemon.mse-game
-	version: 0.25.0
+	version: 2015-11-10
 	status: 34
-	file: M20151109T223331 card-back.png
-	file: M20151210T130026 game
+	file: A20151109T223331 card-back.png
+	file: A20151114T201510 game

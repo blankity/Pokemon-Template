@@ -8,8 +8,8 @@ installer group: pokemon/style
 
 version: 0.25
 
-depends on: pokemon.mse-game 		    0.25 
-depends on: pokemon-symbols.mse-symbol-font 0.25
+depends on: pokemon.mse-game 		    0.32
+depends on: pokemon-symbols.mse-symbol-font 0.32
 
 card background: white
 card width: 375

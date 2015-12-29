@@ -1,7 +1,7 @@
 ﻿mse version: 2.0.0
 installer group: pokemon/symbol-font
 short name: popup style
-version: 0.25
+version: 0.32
 position hint: 002
 icon: ability.png
 
@@ -13,86 +13,86 @@ symbol:
 	image: ability.png
 	regex: true
 symbol:
-	code: c1
+	code: C
 	image: colorless.png
 	regex: true
 symbol:
-	code: w1
+	code: W
 	image: water.png
 	regex: true
 symbol:
-	code: f1
+	code: F
 	image: fighting.png
 	regex: true
 symbol:
-	code: d1
+	code: D
 	image: dark.png
 	regex: true
 symbol:
-	code: r1
+	code: R
 	image: fire.png
 	regex: true
 symbol:
-	code: y1
+	code: Y
 	image: fairy.png
 	regex: true
 symbol:
-	code: g1
+	code: G
 	image: grass.png
 	regex: true
 symbol:
-	code: l1
+	code: L
 	image: lightning.png
 	regex: true
 symbol:
-	code: m1
+	code: M
 	image: metal.png
 	regex: true
 symbol:
-	code: p1
+	code: P
 	image: psychic.png
 	regex: true
 symbol:
-	code: È
+	code: l
 	image: l.png
 	regex: true
 symbol:
-	code: É
+	code: p
 	image: p.png
 	regex: true
 symbol:
-	code: Ê
+	code: r
 	image: r.png
 	regex: true
 symbol:
-	code: Ë
+	code: m
 	image: m.png
 	regex: true
 symbol:
-	code: Ì
+	code: y
 	image: y.png
 	regex: true
 symbol:
-	code: Í
+	code: g
 	image: g.png
 	regex: true
 symbol:
-	code: Î
+	code: w
 	image: w.png
 	regex: true
 symbol:
-	code: Ï
+	code: f
 	image: f.png
 	regex: true
 symbol:
-	code: Ð
+	code: c
 	image: c.png
 	regex: true
 symbol:
-	code: Ñ
+	code: d
 	image: d.png
 	regex: true
 symbol:
-	code: Ò
+	code: a
 	image: a.png
 	regex: true

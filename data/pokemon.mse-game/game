@@ -5,10 +5,10 @@ installer group: pokemon/game files
 icon: card-back.png
 position hint: 01
 
-version: 0.25
+version: 0.32
 
-depends on: pokemon-new.mse-style           0.25
-depends on: pokemon-symbols.mse-symbol-font 0.25
+depends on: pokemon-new.mse-style           0.30
+depends on: pokemon-symbols.mse-symbol-font 0.30
 
 ########### Script
 init script:
@@ -270,6 +270,10 @@ card field:
 	show statistics: false
 
 ############## Bottom Text
+card field:
+	type: text
+	name: stats
+	show statistics: false
 
 card field:
 	type: text

@@ -6,15 +6,15 @@ icon: card-sample.png
 position hint: 02
 installer group: pokemon/style
 
-version: 0.25
+version: 0.32
 
-depends on: pokemon.mse-game 		    0.25 
-depends on: pokemon-symbols.mse-symbol-font 0.25
+depends on: pokemon.mse-game 		    0.32
+depends on: pokemon-symbols.mse-symbol-font 0.32
 
 card background: white
 card width: 375
 card height: 523
-card dpi: 96
+card dpi: 150
 
 #Fonts Used: Gill Sans Std, Sanvito Pro Light Caption, Futura Std, Frutiger LT Std
 #################### Background Stuff
@@ -266,7 +266,6 @@ card style:
 			name: pokemon-symbols
 			size: 108
 			alignment: center top justify-all
-		always symbol: true
 		allow formating: true
 
 	slot2cost:
@@ -354,7 +353,7 @@ card style:
 			name: pokemon-symbols
 			size: 130
 			alignment: middle
-		always symbol: true
+		allow formating: true
 
 ####### Bottom of Card #######
 
@@ -418,7 +417,7 @@ card style:
 		z index: 2
 		alignment: shrink-overflow
 		mask: mask.png
-		visible:  {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
 		font:
 			name: Sanvito Pro Light Caption
 			size: 8.12
@@ -429,7 +428,7 @@ card style:
 	imageCard:
 		left: {if substring(card.card_type, end: 7) == "Trainer" then 40 else 34}
 		top: {if substring(card.card_type, end: 7) == "Trainer" then 86 else 57}
-		width: {if substring(card.card_type, end: 7) == "Pokemon" then 306 else if substring(card.card_type, end: 7) == "Trainer" then 295 else 300}
+		width: {if substring(card.card_type, end: 7) == "Pokemon" then 307 else if substring(card.card_type, end: 7) == "Trainer" then 295 else 300}
 		height: {if substring(card.card_type, end: 7) == "Trainer" then 181 else 201}
 		z index: -2
 
@@ -462,8 +461,8 @@ card style:
 	seticon:
 		left: 335
 		top: 485
-		width: 20
-		height: 20
+		width: 15
+		height: 15
 		z index: 2
 
 	evoimage:
@@ -486,3 +485,15 @@ card style:
 			size: 6
 			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 			style: italic
+	stats:
+		left: 76
+		top: 261
+		width: 217
+		height: 14
+		z index: 3
+		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		alignment: center shrink-overflow
+		font:
+			name: Gill Sans
+			size: 6
+			color: rgb(0,0,0)
