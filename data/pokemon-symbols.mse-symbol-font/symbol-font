@@ -1,12 +1,15 @@
 ﻿mse version: 2.0.0
 installer group: pokemon/symbol-font
 short name: popup style
-version: 0.32
+version: 0.41
 position hint: 002
 icon: ability.png
 
 image font size: 135
 horizontal space: 0
+
+depends on: pokemon.mse-game		0.41
+depends on: pokemon-new.mse-style	0.41
 
 symbol:
 	code: A!
@@ -96,3 +99,22 @@ symbol:
 	code: a
 	image: a.png
 	regex: true
+symbol:
+	code: ×
+	image: ×.png
+	regex: true
+symbol:
+	code: EX
+	image: EX.png
+	regex: true
+symbol:
+	code: O
+	image: {hpImage()+"common"}.png
+	regex: true
+symbol:
+	code: V
+	image: {hpImage()+"uncommon"}.png
+	regex: true
+symbol:
+	code: *
+	image: {hpImage()+"rare"}.png

@@ -1,27 +1,29 @@
+### Welcome to the unofficial Pokémon TCG Template for Magic Set Editor created by Nikki. ###
+
 mse version: 2.0.0
 game: pokemon
-short name: Modern Style
-full name: Current XY Sets
+short name: BW Style
+full name: Style used during BW and early XY.
 icon: card-sample.png
 position hint: 02
 installer group: pokemon/style
 
-version: 0.32
+version: 0.41
 
-depends on: pokemon.mse-game 		    0.32
-depends on: pokemon-symbols.mse-symbol-font 0.32
+depends on: pokemon.mse-game 			    0.41
+depends on: pokemon-symbols.mse-symbol-font 0.41
 
 card background: white
 card width: 375
 card height: 523
-card dpi: 150
+card dpi: 96
 
-#Fonts Used: Gill Sans Std, Sanvito Pro Light Caption, Futura Std, Frutiger LT Std
-#################### Background Stuff
-
+###### Scripts ######
 init script:
-	hpImage := {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then "w" else ""}
+	hpImage := {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then "w" else ""};
+	cardType := {substring(card.card_type, end: 7)};
 
+###### The Card ######
 card style:
 	
 	card_type:
@@ -135,9 +137,9 @@ card style:
 
 ########## Name lists
 	name:
-		left: {if substring(card.card_type, end: 7) == "Pokemon" then 88 else 43}
-		top: {if substring(card.card_type, end: 7) == "Pokemon" then 20 else 57}
-		width: {if substring(card.card_type, end: 7) == "Trainer" then 205 else 115}
+		left: {if cardType() == "Pokemon" then 88 else 43}
+		top: {if cardType() == "Pokemon" then 20 else 57}
+		width: {if cardType() == "Trainer" then 205 else 135}
 		height: 28
 		alignment: left shrink-overflow
 		padding bottom: 0
@@ -148,13 +150,18 @@ card style:
 			size: 17
 			max stretch: 0.5
 			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
+		symbol font:
+			name: pokemon-symbols
+			size: 100
+			alignment: middle right
+			
 	hp:
 		left: 282
 		top: 27
 		width: 45
 		height: 18
 		z index: 2
-		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		visible: {if cardType() == "Trainer" or card.card_type == "Special Energy" then false else true}
 		render style: image
 		popup style: dropdown
 		choice images: 
@@ -181,13 +188,14 @@ card style:
 			HP230: {hpImage()+230}.png
 			HP240: {hpImage()+240}.png
 			HP250: {hpImage()+250}.png
-		
+
+###### Slot 1 ######		
 	slot1cost:
-		left: 24
-		top: {if card.slot1cost == "A!" then 272 else 375}
+		left: 34
+		top: {if card.slot1cost == "A!" then 272 else 328}
 		###{if card.card_type == "Pokemon Metal Stage 1" then 308 else 272}
-		width: 100
-		height: 45
+		width: {if card.slot1cost == "A!" then 100 else if (length(card.slot1cost) == "1") then 35 else if length(card.slot1cost) == 2 then 60 else if length(card.slot1cost) == 3 then 75 else if length(card.slot1cost) == 4 then 100 else if length(card.slot1cost) == 5 then 125 else 50}
+		height: {if card.slot1cost == "A!" then 44 else 35}
 		alignment: middle left
 		z index: 2
 		font:
@@ -197,18 +205,17 @@ card style:
 		symbol font:
 			name: pokemon-symbols
 			size: 125
-			alignment: middle left
+			alignment: middle
 		always symbol: true
 		padding top: 0
-		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		visible: {if cardType() == "Trainer" or card.card_type == "Special Energy" then false else true}
 			
 	slot1name:
-		left: 123
-		top: {if card.slot1cost == "A!" then 284 else 375}
-		###{if card.card_type == "Pokemon Metal Stage 1" then 315 else 284}
+		left: {if card.slot1cost == "A!" then 124 else if length(card.slot1cost) == "1" then 114 else if length(card.slot1cost) == "2" then 114 else if length(card.slot1cost) == "3" then 114 else if length(card.slot1cost) == "4" then 134 else if length(card.slot1cost) == "5" then 154 else 114}
+		top: {if card.slot1cost == "A!" then 272 else 328}
 		width: {length(card.slot1name + card.slot1name + card.slot1name + card.slot1name + card.slot1name + 12) + 30}
-		height: 35
-		alignment: left shrink-overflow
+		height: {if card.slot1cost == "A!" then 44 else 35}
+		alignment: middle left shrink-overflow
 		z index: 2
 		font:
 			name: Gill Sans MT Std Medium
@@ -216,15 +223,14 @@ card style:
 			max stretch: 2.0
 			color: {if card.slot1cost == "A!" then rgb(229,2,35) else if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0) }
 			shadow displacement y: .5
-		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		visible: {if cardType() == "Trainer" or card.card_type == "Special Energy" then false else true}
 
 	slot1damage:
 		left: 309
-		top: {if card.slot1cost == "A!" then 284 else 375}
-		###{if card.card_type == "Pokemon Metal Stage 1" then 315 else 284}
+		top: {card_style.slot1name.top}
 		width: 35
 		height: 35
-		alignment: right
+		alignment: middle right
 		z index: 2
 		font:
 			name: Futura Lt
@@ -233,11 +239,11 @@ card style:
 			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 			shadow color: rgb(0,0,0)
 			shadow displacement x: -0.5
-		visible: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		visible: {if cardType() == "Trainer" or card.card_type == "Special Energy" then false else true}
 		
 	atk1mod:
 		left: 343
-		top: 290
+		top: {card_style.slot1name.top+7}
 		width: 15
 		height: 15
 		render style: text
@@ -248,15 +254,15 @@ card style:
 			size: 9.5
 			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 		z index: 2
-		visible: {if card.atk1mod == "1" then false else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		visible: {if cardType() == "Trainer" or card.card_type == "Special Energy" then false else true}
 
 		
 	slot1text:
-		left: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 55 else 29}
-		top: {if card.slot1cost == "A!" then 312 else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 315 else if card.card_type == "Pokemon Metal Stage 1" then 345 else 405}
-		width: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 267 else 315}
-		height: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 95 else 65}
-		alignment: middle left justify
+		left: {if cardType() == "Trainer" or card.card_type == "Special Energy" then 55 else 34}
+		top: {if card.slot1cost == "A!" then 312 else if cardType() == "Trainer" or card.card_type == "Special Energy" then 315 else (card_style.slot1name.top+35)}
+		width: {if substring(card.card_type, end: 7) == "Trainer" or card.card_type == "Special Energy" then 267 else 315}
+		height: {if substring(card.card_type, end: 7) == "Trainer" or card.card_type == "Special Energy" then 95 else if length(card.slot1text) <= 49 then 20 else if length(card.slot1text) >=50 and length(card.slot1text) <= 99 then 40 else if length(card.slot1text) >= 100 and length(card.slot1text) <= 149 then 60 else if length(card.slot1text) >=150 and length(card.slot1text) <= 199 then 80 else if length(card.slot1text) >=200 then 95 else 10}
+		alignment: {if substring(card.card_type, end: 7) == "Trainer" then "middle left justify" else "left justify"}
 		z index: 2
 		font:
 			name: Trebuchet MS
@@ -268,11 +274,12 @@ card style:
 			alignment: center top justify-all
 		allow formating: true
 
+###### Slot 2 ######
 	slot2cost:
-		left: {if card.slot1cost == "" then 0 else 25}
-		top: {if card.slot1cost == "" then 0 else 375}
+		left: {if card.slot1cost == "" then 0 else 34}
+		top: {if card.slot1cost == "" then 0 else if card.slot1cost == "A!" then 375 else (card_style.slot1cost.top-40)}
 		###{if card.card_type == "Pokemon Metal Stage 1" then 355 else 375}
-		width: 100
+		width: {if card.slot1cost == "A!" then 100 else if length(card.slot2cost) == 1 then 25 else if length(card.slot2cost) == 2 then 50 else if length(card.slot2cost) == 3 then 75 else if length(card.slot2cost) == 4 then 100 else if length(card.slot2cost) == 5 then 125 else 50}
 		height: 35
 		alignment: middle left
 		z index: 2
@@ -290,8 +297,8 @@ card style:
 		visible: {if card.slot1cost == "" or card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
 			
 	slot2name:
-		left: {if card.slot1name == "" then 0 else 123}
-		top: {if card.slot1name == "" then 0 else if card.card_type == "Pokemon Metal Stage 1" then 355 else 375}
+		left: {if card.slot1name == "" then 0 else if card.slot1cost == "A!" then 124 else if length(card.slot1cost) == "1" then 64 else if length(card.slot1cost) == "2" then 84 else if length(card.slot1cost) == "3" then 104 else if length(card.slot1cost) == "4" then 124 else if length(card.slot1cost) == "5" then 144 else 124}
+		top: {if card.slot1name == "" then 0 else if card.slot1cost == "A!" then 375 else 304}
 		width: {length(card.slot1name + card.slot1name + card.slot1name + card.slot1name + card.slot1name + 12) + 30}
 		height: 35
 		alignment: middle left shrink-overflow
@@ -302,11 +309,11 @@ card style:
 			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 			shadow displacement x: .5
 			shadow displacement y: .5
-		visible: {if card.slot1name == "" then false else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		visible: {if card.slot2cost == "" then false else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
 
 	slot2damage:
-		left: {if card.slot1damage == "" and card.slot1cost != "A!" then 0 else 309}
-		top: {if card.slot1damage == "" and card.slot1cost != "A!" then 0 else 375}
+		left: {if card.slot2name == "" then 0 else if card.slot1cost == "A!" then (card_style.slot1damage.left) else (card_style.slot1damage.left)}
+		top: {if card.slot2name == "" then 0 else if card.slot1cost == "A!" then (card_style.slot2name.top) else (card_style.slot2name.top)}
 		###{if card.card_type == "Pokemon Metal Stage 1" then 355 else 375}
 		width: 35
 		height: 35
@@ -319,7 +326,7 @@ card style:
 			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 			shadow color: rgb(0,0,0)
 			shadow displacement x: -0.5
-		visible: {if card.slot1damage == "" and card.slot1cost != "A!" then false else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		visible: {if card.slot2cost == "" and card.slot1cost != "A!" then false else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
 		allow formating: true
 	
 	atk2mod:
@@ -335,11 +342,11 @@ card style:
 			size: 9.5
 			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 		z index: 2
-		visible: {if card.slot2damage == false then false else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		visible: {if substring(card.card_type, end: 7) == "Trainer" then false else if card.card_type == "Special Energy" then false else if card.slot2cost == "" then false else true}
 
 	slot2text:
 		left: {if card.slot1text == "" then 0 else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 24 else 29}
-		top: {if card.slot1text == "" then 0 else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 405 else if card.card_type == "Pokemon Metal Stage 1" then 385 else 405}
+		top: {if card.slot1text == "" then 0 else if card.slot1cost == "A!" then 405 else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 405 else 335}
 		width: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 325 else 315}
 		height: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 35 else 35}
 		alignment: left justify
@@ -348,7 +355,7 @@ card style:
 			name: Trebuchet MS
 			size: 10
 			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
-		visible: {if card.slot1text == "" then false else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
+		visible: {if card.slot2cost == "" then false else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then false else true}
 		symbol font:
 			name: pokemon-symbols
 			size: 130
@@ -433,31 +440,37 @@ card style:
 		z index: -2
 
 	illustrator:
-		left: 205
-		top : 492
+		left: 187
+		top : 494
 		width: 100
 		height: 12
 		z index: 2
 		alignment: center left shrink-overflow
 		font:
 			name: Futura Std
+			weight: bold
 			style: italic
-			size: 6.5
+			size: 5.5
 			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 	set number:
-		left: 305
+		left: 291
 		top: 492
-		width: 20
+		width: 35
 		height: 12
 		z index: 2
-		alignment: middle center
+		alignment: middle right
+		direction: right to left
 		font:
 			name: Futura STD
 			style: italic
 			size: 7
 			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
-
-
+		symbol font:
+			name: pokemon-symbols
+			size: 125
+			alignment: middle
+		allow formating: true
+		
 	seticon:
 		left: 335
 		top: 485

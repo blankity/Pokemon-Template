@@ -1,3 +1,5 @@
+﻿### Welcome to the unofficial Pokemon TCG Template for Magic Set Editor created by Nikki. ###
+
 mse version: 2.0.0
 short name: Pokemon
 full name: Pokemon Trading Card Game
@@ -5,32 +7,36 @@ installer group: pokemon/game files
 icon: card-back.png
 position hint: 01
 
-version: 0.32
+version: 0.41
 
-depends on: pokemon-new.mse-style           0.30
-depends on: pokemon-symbols.mse-symbol-font 0.30
+depends on: pokemon-new.mse-style           0.41
+depends on: pokemon-symbols.mse-symbol-font 0.41
 
-########### Script
+###### Scripts ######
 init script:
 	only_numbers := filter_rule(match: "[0-9]")
 
-########### Set Fields
+###### Set Information ######
 set field:
 	type: info
 	name: Set Information
+	description: Information about this set. This information will not appear on the card.
 set field:
 	type: text
 	name: title
-	description: This information will not appear on the card
+	description: Title of this set. This information will not appear on the card.
 set field:
 	type: text
-	name: description
+	name: Illustrator
+	description: Illustrator of the artwork in this set. This information will not appear on the card.
+set field:
+	type: text
+	name: Description
 	multi line: true
-	description: This information will not appear on the card
+	description: Description of this set. This information will not appear on the card.
 
-###################### Card Fields
-########### Background
-### Basic, Stage 1, Stage 2, EX, Mega, BREAK, Full Art
+###### Card Fields ######
+### Card Type. ie Grass Basic, Fire Stage 2, Dragon Stage 1, Trainer Supporter, etc. ###
 card field:
 	type: choice
 	name: card_type
@@ -40,97 +46,97 @@ card field:
 			choice: Basic
 			choice: Stage 1
 			choice: Stage 2
-			choice: EX
-			choice: Mega
-			choice: BREAK
-			choice: Full Art
+			#choice: EX
+			#choice: Mega
+			#choice: BREAK
+			#choice: Full Art
 		choice: Fire 
 			choice: Basic
 			choice: Stage 1
 			choice: Stage 2
-			choice: EX
-			choice: Mega
-			choice: BREAK
-			choice: Full Art
+			#choice: EX
+			#choice: Mega
+			#choice: BREAK
+			#choice: Full Art
 		choice: Water
 			choice: Basic
 			choice: Stage 1
 			choice: Stage 2
-			choice: EX
-			choice: Mega
-			choice: BREAK
-			choice: Full Art
+			#choice: EX
+			#choice: Mega
+			#choice: BREAK
+			#choice: Full Art
 		choice: Light
 			choice: Basic
 			choice: Stage 1
 			choice: Stage 2
-			choice: EX
-			choice: Mega
-			choice: BREAK
-			choice: Full Art
+			#choice: EX
+			#choice: Mega
+			#choice: BREAK
+			#choice: Full Art
 		choice: Psych
 			choice: Basic
 			choice: Stage 1
 			choice: Stage 2
-			choice: EX
-			choice: Mega
-			choice: BREAK
-			choice: Full Art
+			#choice: EX
+			#choice: Mega
+			#choice: BREAK
+			#choice: Full Art
 		choice: Fight
 			choice: Basic
 			choice: Stage 1
 			choice: Stage 2
-			choice: EX
-			choice: Mega
-			choice: BREAK
-			choice: Full Art
+			#choice: EX
+			#choice: Mega
+			#choice: BREAK
+			#choice: Full Art
 		choice: Dark 
 			choice: Basic
 			choice: Stage 1
 			choice: Stage 2
-			choice: EX
-			choice: Mega
-			choice: BREAK
-			choice: Full Art
+			#choice: EX
+			#choice: Mega
+			#choice: BREAK
+			#choice: Full Art
 		choice: Metal
 			choice: Basic
 			choice: Stage 1
 			choice: Stage 2
-			choice: EX
-			choice: Mega
-			choice: BREAK
-			choice: Full Art
+			#choice: EX
+			#choice: Mega
+			#choice: BREAK
+			#choice: Full Art
 		choice: Fairy
 			choice: Basic
 			choice: Stage 1
 			choice: Stage 2
-			choice: EX
-			choice: Mega
-			choice: BREAK
-			choice: Full Art
+			#choice: EX
+			#choice: Mega
+			#choice: BREAK
+			#choice: Full Art
 		choice: Dragn
 			choice: Basic
 			choice: Stage 1
 			choice: Stage 2
-			choice: EX
-			choice: Mega
-			choice: BREAK
-			choice: Full Art
+			#choice: EX
+			#choice: Mega
+			#choice: BREAK
+			#choice: Full Art
 		choice: Color
 			choice: Basic
 			choice: Stage 1
 			choice: Stage 2
-			choice: EX
-			choice: Mega
-			choice: BREAK
-			choice: Full Art
+			#choice: EX
+			#choice: Mega
+			#choice: BREAK
+			#choice: Full Art
 
 	choice: Trainer
 		choice: Item
 		choice: Tool
 		choice: Supporter
 		choice: Stadium
-		choice: ACE SPEC
+		choice: #ACE SPEC
 
 	choice: Special Energy
 	card list name: Card Type
@@ -140,8 +146,7 @@ card field:
 	card list allow: true
 	card list alignment: left
 
-
-############## Name lists
+### Name of card ###
 card field:
 	type: text
 	name: name
@@ -152,6 +157,7 @@ card field:
 	card list visible: true
 	card list column: 1
 
+### HP ###
 card field:
 	type: choice
 	name: hp
@@ -180,69 +186,133 @@ card field:
 	choice: HP240
 	choice: HP250
 
+###### Slot 1 ######
+### Cost of Attack or Ability Symbol ###
 card field:
 	type: text
 	name: slot1cost
-	description: Cost/Ability
+	description: Attack Cost/Ability
 	show statistics: false
-	
+### Name of Attack/Ability ###
 card field:
 	type: text
 	name: slot1name
-	description: Slot 1 name
+	description: Name of Attack/Ability
 	show statistics: false
-
+### Damage count ###
 card field:
 	type: text
 	name: slot1damage
-	description: Slot 1 attack value
+	description: Amount of damage attack deals.
 	show statistics: false
 	script: only_numbers(value)
-
+### Attack Modifier ###
+card field:
+	type: choice
+	name: atk1mod
+	description: Does this attack have a modifier?
+	show statistics: false
+	choice: 
+	choice: +
+	choice: ×
+	choice: -
+### Slot 1 Effect ###
 card field:
 	type: text
 	name: slot1text
-	description: Effect
+	description: Effect of Attack/Ability.
 	show statistics: false
 	multi line: true
-	
+
+###### Slot 2 ######
+### Cost of attack ###
 card field:
 	type: text
 	name: slot2cost
-	description: Cost/Ability
+	description: Cost of attack.
 	show statistics: false
-	
+### Name of attack ###
 card field:
 	type: text
 	name: slot2name
-	description: Slot 2 name
+	description: Name of Attack.
 	show statistics: false
-
+### Damage Count ###
 card field:
 	type: text
 	name: slot2damage
-	description: Slot 2 attack value
+	description: Amount of damage attack deals.
 	show statistics: false
-
+### Attack Modifier ###
+card field:
+	type: choice
+	name: atk2mod
+	description: Does this attack have a modifier?
+	show statistics: false
+	choice: 
+	choice: +
+	choice: ×
+	choice: -
+### Effect of attack ###
 card field:
 	type: text
 	name: slot2text
-	description: Effect
+	description: Effect of attack.
 	show statistics: false
 	multi line: true
 	
+###### Slot 3 ######
+### Cost of attack ###
+card field:
+	type: text
+	name: slot3cost
+	description: Cost of attack.
+	show statistics: false
+### Name of attack ###
+card field:
+	type: text
+	name: slot3name
+	description: Name of Attack.
+	show statistics: false
+### Damage Count ###
+card field:
+	type: text
+	name: slot3damage
+	description: Amount of damage attack deals.
+	show statistics: false
+### Attack Modifier ###
+card field:
+	type: choice
+	name: atk3mod
+	description: Does this attack have a modifier?
+	show statistics: false
+	choice: 
+	choice: +
+	choice: ×
+	choice: -
+### Effect of attack ###
+card field:
+	type: text
+	name: slot3text
+	description: Effect of attack.
+	show statistics: false
+	multi line: true
 
+###### Weakness ######
 card field:
 	type: text
 	name: weakness
 	description: Weakness
 	show statistics: false
+
+###### Resistance ######
 card field:
 	type: text
 	name: resistance
 	description: Resistance
 	show statistics: false
 
+###### Retreat Cost ######
 card field:
 	type: choice
 	name: retreat
@@ -255,7 +325,8 @@ card field:
 	choice: 4 Retreat
 	card list visible: true
 	card list column: 3
-	
+
+###### Flavour Text ######
 card field:
 	type: text
 	name: flavor text
@@ -263,62 +334,48 @@ card field:
 	show statistics: false
 	multi line: true
 
-############## Image
+###### Card Image ######
 card field:
 	type: image
 	name: imageCard
 	show statistics: false
 
-############## Bottom Text
+###### Pokemon Detail ######
 card field:
 	type: text
 	name: stats
 	show statistics: false
 
+###### Illustrator ######
 card field:
 	type: text
 	name: illustrator
 	show statistics: false
 
+###### Set Number ######
 card field:
 	type: text
 	name: set number
 	description: Set Number
 	show statistics: false
 
+###### Set Icon ######
 card field:
 	type: image
 	name: seticon
 	description: Set Icon
 	show statistics: false
+
+###### Evolution Icon ######
 card field:
 	type: image
 	name: evoimage
 	description: Image for Pre-evolution
 	show statistics: false
 
+###### Evolution Name ######
 card field:
 	type: text
 	name: evoname
 	description: Name of pre evolution
 	show statistics: false
-
-card field:
-	type: choice
-	name: atk1mod
-	description: Does this attack have a modifier?
-	show statistics: false
-	choice: 
-	choice: +
-	choice: x
-	choice: -
-
-card field:
-	type: choice
-	name: atk2mod
-	description: Does this attack have a modifier?
-	show statistics: false
-	choice: 
-	choice: +
-	choice: x
-	choice: -
