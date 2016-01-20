@@ -8,10 +8,10 @@ icon: card-sample.png
 position hint: 02
 installer group: pokemon/style
 
-version: 0.41
+version: 0.42
 
-depends on: pokemon.mse-game 			    0.41
-depends on: pokemon-symbols.mse-symbol-font 0.41
+depends on: pokemon.mse-game 			   		0.42
+depends on: pokemon-symbols.mse-symbol-font 	0.42
 
 card background: white
 card width: 375
@@ -133,12 +133,12 @@ card style:
 
 			Special Energy: specialenergy.png
 		
-		mask: {if substring(card.card_type, end: 7) == "Pokemon" and substring(card.card_type, begin: 14, end: 5) == "Stage" then "mask1.png" else "mask2.png"}
+		mask: {if card.card_type == "Special Energy" then "energymask.png" else if substring(card.card_type, end: 7) == "Pokemon" and substring(card.card_type, begin: 14, end: 5) == "Stage" then "mask1.png" else "mask2.png"}
 
 ########## Name lists
 	name:
-		left: {if cardType() == "Pokemon" then 88 else 43}
-		top: {if cardType() == "Pokemon" then 20 else 57}
+		left: {if cardType() == "Pokemon" then 88 else if cardType() == "Trainer" then 43 else if cardType() == "Special" then 29}
+		top: {if cardType() == "Pokemon" then 20 else if cardType() == "Special" then 332 else 57}
 		width: {if cardType() == "Trainer" then 205 else 135}
 		height: 28
 		alignment: left shrink-overflow
@@ -258,9 +258,9 @@ card style:
 
 		
 	slot1text:
-		left: {if cardType() == "Trainer" or card.card_type == "Special Energy" then 55 else 34}
-		top: {if card.slot1cost == "A!" then 312 else if cardType() == "Trainer" or card.card_type == "Special Energy" then 315 else (card_style.slot1name.top+35)}
-		width: {if substring(card.card_type, end: 7) == "Trainer" or card.card_type == "Special Energy" then 267 else 315}
+		left: {if cardType() == "Trainer" or card.card_type == "Special Energy" then 29 else 34}
+		top: {if card.slot1cost == "A!" then 312 else if cardType() == "Trainer" or card.card_type == "Special Energy" then 363 else (card_style.slot1name.top+35)}
+		width: {if substring(card.card_type, end: 7) == "Trainer" or card.card_type == "Special Energy" then 313 else 315}
 		height: {if substring(card.card_type, end: 7) == "Trainer" or card.card_type == "Special Energy" then 95 else if length(card.slot1text) <= 49 then 20 else if length(card.slot1text) >=50 and length(card.slot1text) <= 99 then 40 else if length(card.slot1text) >= 100 and length(card.slot1text) <= 149 then 60 else if length(card.slot1text) >=150 and length(card.slot1text) <= 199 then 80 else if length(card.slot1text) >=200 then 95 else 10}
 		alignment: {if substring(card.card_type, end: 7) == "Trainer" then "middle left justify" else "left justify"}
 		z index: 2
@@ -510,3 +510,20 @@ card style:
 			name: Gill Sans
 			size: 6
 			color: rgb(0,0,0)
+
+###### Special Energy ######
+	energyBack:
+		left: 24
+		top: 22
+		width: 140
+		height: 25
+		z index: -2
+		visible: {if card.card_type == "Special Energy" then true else false}
+		
+	energyIcon:
+		left: 322
+		top: 20
+		width: 30
+		height: 30
+		z index: 2
+		visible: {if card.card_type == "Special Energy" then true else false}

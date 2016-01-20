@@ -7,10 +7,10 @@ installer group: pokemon/game files
 icon: card-back.png
 position hint: 01
 
-version: 0.41
+version: 0.42
 
-depends on: pokemon-new.mse-style           0.41
-depends on: pokemon-symbols.mse-symbol-font 0.41
+depends on: pokemon-new.mse-style           	0.42
+depends on: pokemon-symbols.mse-symbol-font		0.42
 
 ###### Scripts ######
 init script:
@@ -378,4 +378,18 @@ card field:
 	type: text
 	name: evoname
 	description: Name of pre evolution
+	show statistics: false
+	
+###### Special Energy Background ######
+card field:
+	type: image
+	name: energyBack
+	description: Background to appear behind Energy on Special Energy cards
+	show statistics: false
+
+###### Special Energy Icon ######
+card field:
+	type: image
+	name: energyIcon
+	description: Icon of Energy type of card. Commonly Colorless
 	show statistics: false
