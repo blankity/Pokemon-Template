@@ -1,4 +1,4 @@
-### Welcome to the unofficial Pokémon TCG Template for Magic Set Editor created by Nikki. ###
+﻿### Welcome to the unofficial Pokémon TCG Template for Magic Set Editor created by Nikki. ###
 
 mse version: 2.0.0
 game: pokemon
@@ -261,16 +261,16 @@ card style:
 		left: {if cardType() == "Trainer" or card.card_type == "Special Energy" then 29 else 34}
 		top: {if card.slot1cost == "A!" then 312 else if cardType() == "Trainer" or card.card_type == "Special Energy" then 363 else (card_style.slot1name.top+35)}
 		width: {if substring(card.card_type, end: 7) == "Trainer" or card.card_type == "Special Energy" then 313 else 315}
-		height: {if substring(card.card_type, end: 7) == "Trainer" or card.card_type == "Special Energy" then 95 else if length(card.slot1text) <= 49 then 20 else if length(card.slot1text) >=50 and length(card.slot1text) <= 99 then 40 else if length(card.slot1text) >= 100 and length(card.slot1text) <= 149 then 60 else if length(card.slot1text) >=150 and length(card.slot1text) <= 199 then 80 else if length(card.slot1text) >=200 then 95 else 10}
-		alignment: {if substring(card.card_type, end: 7) == "Trainer" then "middle left justify" else "left justify"}
+		height: {if substring(card.card_type, end: 7) == "Trainer" or card.card_type == "Special Energy" then 125 else if length(card.slot1text) <= 49 then 20 else if length(card.slot1text) >=50 and length(card.slot1text) <= 99 then 40 else if length(card.slot1text) >= 100 and length(card.slot1text) <= 149 then 60 else if length(card.slot1text) >=150 and length(card.slot1text) <= 199 then 80 else if length(card.slot1text) >=200 then 95 else 10}
+		alignment: {if substring(card.card_type, end: 7) == "Trainer" then "middle left justify" else if cardType() == "Special" then "left justify" else "left justify"}
 		z index: 2
 		font:
 			name: Trebuchet MS
-			size: 10
+			size: {if cardType() == "Special" then 7.9 else 10}
 			color: {if substring(card.card_type, end: 13) == "Pokemon Dark " or substring(card.card_type, end: 13) == "Pokemon Dragn" then rgb(255,255,255) else rgb(0,0,0)}
 		symbol font:
 			name: pokemon-symbols
-			size: 108
+			size: {if cardType() == "Special" then 85 else 108}
 			alignment: center top justify-all
 		allow formating: true
 
@@ -433,10 +433,10 @@ card style:
 
 ########## Images
 	imageCard:
-		left: {if substring(card.card_type, end: 7) == "Trainer" then 40 else 34}
-		top: {if substring(card.card_type, end: 7) == "Trainer" then 86 else 57}
-		width: {if substring(card.card_type, end: 7) == "Pokemon" then 307 else if substring(card.card_type, end: 7) == "Trainer" then 295 else 300}
-		height: {if substring(card.card_type, end: 7) == "Trainer" then 181 else 201}
+		left: {if substring(card.card_type, end: 7) == "Trainer" then 40 else if substring(card.card_type, end: 7) == "Special" then 16 else 34}
+		top: {if substring(card.card_type, end: 7) == "Trainer" then 86 else if substring(card.card_type, end: 7) == "Special" then 42 else 57}
+		width: {if substring(card.card_type, end: 7) == "Pokemon" then 307 else if substring(card.card_type, end: 7) == "Trainer" then 295 else 343}
+		height: {if substring(card.card_type, end: 7) == "Pokemon" then 201 else if substring(card.card_type, end: 7) == "Trainer" then 181 else 297}
 		z index: -2
 
 	illustrator:
