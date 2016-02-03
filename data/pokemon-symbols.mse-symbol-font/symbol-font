@@ -1,7 +1,7 @@
 ﻿mse version: 2.0.0
 installer group: pokemon/symbol-font
 short name: popup style
-version: 0.42
+version: 0.44
 position hint: 002
 icon: ability.png
 
@@ -100,7 +100,7 @@ symbol:
 	image: a.png
 	regex: true
 symbol:
-	code: ×
+	code: x
 	image: ×.png
 	regex: true
 symbol:

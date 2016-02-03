@@ -8,10 +8,10 @@ icon: card-sample.png
 position hint: 02
 installer group: pokemon/style
 
-version: 0.42
+version: 0.44
 
-depends on: pokemon.mse-game 			   		0.42
-depends on: pokemon-symbols.mse-symbol-font 	0.42
+depends on: pokemon.mse-game 			   		0.44
+depends on: pokemon-symbols.mse-symbol-font		0.44
 
 card background: white
 card width: 375
@@ -191,12 +191,11 @@ card style:
 
 ###### Slot 1 ######		
 	slot1cost:
-		left: 34
+		left: 28
 		top: {if card.slot1cost == "A!" then 272 else 328}
-		###{if card.card_type == "Pokemon Metal Stage 1" then 308 else 272}
 		width: {if card.slot1cost == "A!" then 100 else if (length(card.slot1cost) == "1") then 35 else if length(card.slot1cost) == 2 then 60 else if length(card.slot1cost) == 3 then 75 else if length(card.slot1cost) == 4 then 100 else if length(card.slot1cost) == 5 then 125 else 50}
 		height: {if card.slot1cost == "A!" then 44 else 35}
-		alignment: middle left
+		alignment: {if card.slot1cost == "A!" then "top" else "left"}
 		z index: 2
 		font:
 			name: Futura Lt
@@ -205,17 +204,16 @@ card style:
 		symbol font:
 			name: pokemon-symbols
 			size: 125
-			alignment: middle
 		always symbol: true
 		padding top: 0
 		visible: {if cardType() == "Trainer" or card.card_type == "Special Energy" then false else true}
 			
 	slot1name:
 		left: {if card.slot1cost == "A!" then 124 else if length(card.slot1cost) == "1" then 114 else if length(card.slot1cost) == "2" then 114 else if length(card.slot1cost) == "3" then 114 else if length(card.slot1cost) == "4" then 134 else if length(card.slot1cost) == "5" then 154 else 114}
-		top: {if card.slot1cost == "A!" then 272 else 328}
+		top: {if card.slot1cost == "A!" then 277 else 328}
 		width: {length(card.slot1name + card.slot1name + card.slot1name + card.slot1name + card.slot1name + 12) + 30}
-		height: {if card.slot1cost == "A!" then 44 else 35}
-		alignment: middle left shrink-overflow
+		height: {if card.slot1cost == "A!" then 34 else 35}
+		alignment: {if card.slot1cost == "A!" then "bottom left shrink-overflow" else "middle left shrink-overflow"}
 		z index: 2
 		font:
 			name: Gill Sans MT Std Medium
@@ -276,7 +274,7 @@ card style:
 
 ###### Slot 2 ######
 	slot2cost:
-		left: {if card.slot1cost == "" then 0 else 34}
+		left: {if card.slot1cost == "" then 0 else 28}
 		top: {if card.slot1cost == "" then 0 else if card.slot1cost == "A!" then 375 else (card_style.slot1cost.top-40)}
 		###{if card.card_type == "Pokemon Metal Stage 1" then 355 else 375}
 		width: {if card.slot1cost == "A!" then 100 else if length(card.slot2cost) == 1 then 25 else if length(card.slot2cost) == 2 then 50 else if length(card.slot2cost) == 3 then 75 else if length(card.slot2cost) == 4 then 100 else if length(card.slot2cost) == 5 then 125 else 50}
@@ -345,7 +343,7 @@ card style:
 		visible: {if substring(card.card_type, end: 7) == "Trainer" then false else if card.card_type == "Special Energy" then false else if card.slot2cost == "" then false else true}
 
 	slot2text:
-		left: {if card.slot1text == "" then 0 else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 24 else 29}
+		left: {if card.slot1text == "" then 0 else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 24 else (card_style.slot1text.left)}
 		top: {if card.slot1text == "" then 0 else if card.slot1cost == "A!" then 405 else if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 405 else 335}
 		width: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 325 else 315}
 		height: {if card.card_type == "Trainer Item" or card.card_type == "Trainer Supporter" or card.card_type == "Trainer Tool" or card.card_type == "Trainer Stadium" or card.card_type == "Special Energy" then 35 else 35}
