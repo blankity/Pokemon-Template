@@ -10,7 +10,7 @@ position hint: 01
 version: 0.44
 
 depends on: pokemon-new.mse-style           	0.44
-depends on: pokemon-symbols.mse-symbol-font		0.44
+depends on: pokemon-symbols.mse-symbol-font
 
 ###### Scripts ######
 init script:
